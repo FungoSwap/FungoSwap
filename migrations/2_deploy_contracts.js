@@ -1,5 +1,5 @@
-var SocioTope = artifacts.require("./SocioTope.sol");
+const SocioTope = artifacts.require("./SocioTope.sol");
 
-module.exports = function (deployer) {
+module.exports = (deployer) => {
   deployer.deploy(SocioTope);
 };

@@ -1,9 +1,8 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-require("dotenv").config();
-const mnemonic = process.env.MNEMONIC;
-const polygon = process.env.POLY_URL;
-const mumbai = process.env.MUMB_URL;
 const path = require("path");
+require("dotenv").config();
+
+const mnemonic = process.env.MNEMONIC;
 
 module.exports = {
   contracts_build_directory: path.join(__dirname, "src/contracts"),
@@ -14,14 +13,14 @@ module.exports = {
       network_id: "*",
     },
     polygon: {
-      provider: () => new HDWalletProvider(mnemonic, POLY_URL),
+      provider: () => new HDWalletProvider(mnemonic, process.env.POLY_URL),
       network_id: 137,
       confirmations: 10,
       timeoutBlocks: 200,
       skipDryRun: true,
     },
     mumbai: {
-      provider: () => new HDWalletProvider(mnemonic, MUMB_URL),
+      provider: () => new HDWalletProvider(mnemonic, process.env.MUMB_URL),
       network_id: 80001,
       confirmations: 10,
       timeoutBlocks: 200,

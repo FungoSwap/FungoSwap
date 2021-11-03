@@ -1,18 +1,28 @@
 {
-  "name": "client",
+  "name": "fungo-swap",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "16.11.0",
-    "react-dom": "16.11.0",
-    "react-scripts": "3.2.0",
-    "web3": "1.2.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "@truffle/hdwallet-provider": "^1.5.1",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-scripts": "3.2.0",
+    "web3": "1.2.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-bignumber": "^3.0.0",
+    "chai-bn": "^0.3.0",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.1"
   },
   "eslintConfig": {
     "extends": "react-app"
