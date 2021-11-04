@@ -11,6 +11,7 @@ module.exports = {
       host: "127.0.0.1",
       port: 8545,
       network_id: "*",
+      gasPrice: 0,
     },
     polygon: {
       provider: () => new HDWalletProvider(mnemonic, process.env.POLY_URL),
@@ -30,6 +31,12 @@ module.exports = {
   compilers: {
     solc: {
       version: "0.8.7",
+      settings: {
+        optimizer: {
+          enabled: true,
+          runs: 200,
+        },
+      },
     },
   },
 };

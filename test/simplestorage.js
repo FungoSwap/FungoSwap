@@ -1,15 +1,17 @@
-const SimpleStorage = artifacts.require("./SimpleStorage.sol");
+const { expect } = require("chai");
+const SimpleStorage = artifacts.require("SimpleStorage");
 
-contract("SimpleStorage", accounts => {
-  it("...should store the value 89.", async () => {
+contract("SimpleStorage", (accounts) => {
+  it("should store the value 89.", async () => {
     const simpleStorageInstance = await SimpleStorage.deployed();
 
     // Set value of 89
     await simpleStorageInstance.set(89, { from: accounts[0] });
 
     // Get stored value
-    const storedData = await simpleStorageInstance.get.call();
+    const storedData = await simpleStorageInstance.get();
 
-    assert.equal(storedData, 89, "The value 89 was not stored.");
+    //assert.equal(storedData, 89, "The value 89 was not stored.");
+    expect(storedData.toString()).to.equal("89");
   });
 });
